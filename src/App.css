@@ -1,0 +1,383 @@
+:root {
+  --bg-color: #272727;
+  --text-color: #e2e2e2;
+  --input-bg: #1a1a1a;
+  --button-bg: #f5c842;
+  --button-hover: #ffe066;
+  --clear-btn: #ff5252;
+  --clear-hover: #ff6f6f;
+  --li-bg: #1a1a1a;
+  --li-hover: #2a2a2a;
+  --line-through: #888;
+  --completed-bg: #2a2a2a;
+}
+
+.light-theme {
+  --bg-color: #dfdfdf;
+  --text-color: #1a1a1a;
+  --input-bg: #ffffff;
+  --button-bg: #f5c842;
+  --button-hover: #ffe066;
+  --clear-btn: #d93025;
+  --clear-hover: #f28b82;
+  --li-bg: #ffffff;
+  --li-hover: #eeeeee;
+  --line-through: #999;
+  --completed-bg: #dddddd;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Code', monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--button-bg);
+  border-radius: 6px;
+  border: 2px solid var(--bg-color);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--button-hover);
+}
+
+.app-container {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--button-bg);
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+.sticky-form {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color);
+  z-index: 10;
+  padding-bottom: 1rem;
+}
+
+.formcontainer {
+  margin: auto;
+  display: flex;
+  gap: 10px;  
+  max-width: 800px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="text"] {
+  flex: 1;
+  background: var(--input-bg);
+  color: var(--text-color);
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 16px;
+  border-bottom: 2px solid var(--button-bg);
+  outline: none;
+  border-radius: 4px;
+}
+
+input[type="text"]::placeholder {
+  color: #666;
+}
+
+
+select {
+  flex: 1;
+  background: var(--input-bg);
+  color: var(--text-color);
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 16px;
+  border-bottom: 2px solid var(--button-bg);
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+select option {
+  background: var(--input-bg);
+  color: var(--text-color);
+}
+/* Fix DatePicker OK button size */
+.ant-picker-ok button {
+  padding: 10px 10px !important;
+  font-size: 5px !important;
+  height: auto !important;
+  border-radius: 4px !important;
+}
+
+.outer-scroll-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.columns-wrapper {
+  display: inline-flex;           /* key change: inline-flex for centering */
+  gap: 10px;
+  padding: 1rem 0;
+}
+.outer-scroll-wrapper {
+  text-align: center;
+}
+
+.outer-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.outer-scroll-wrapper::-webkit-scrollbar-track {
+  background: var(--input-bg);
+  border-radius: 4px;
+}
+
+.outer-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: var(--button-bg);
+  border-radius: 4px;
+}
+
+.outer-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--button-hover);
+}
+
+.column {
+  margin: auto;
+  background: var(--li-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 600px;
+  max-width: 1200px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.column h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 18px;
+  color: var(--button-bg);
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .columns-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+
+
+
+button {
+  background-color: var(--button-bg);
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #0f0f0f;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+.clear-btn {
+  background-color: var(--clear-btn);
+  color: white;
+}
+
+.clear-btn:hover {
+  background-color: var(--clear-hover);
+}
+
+.outerdiv {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column ul li {
+  background: var(--li-bg);
+  margin-bottom: 12px;
+  padding: 1rem 3rem 1rem 1rem;
+  border-radius: 6px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.column ul li:hover {
+  background-color: var(--li-hover);
+}
+
+
+.completetodo {
+  text-decoration: line-through;
+  color: var(--line-through);
+  background-color: var(--completed-bg);
+}
+
+.text {
+  max-width: 90%;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.text strong {
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.text .desc {
+  font-size: 15px;
+  color: #aaa;
+}
+
+.text .time {
+  font-size: 13px;
+  color: #888;
+}
+
+li button.edit-btn {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: var(--button-bg);
+  font-weight: bold;
+  border: 1px solid var(--button-bg);
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+li button.edit-btn:hover {
+  background-color: var(--button-bg);
+  color: #0f0f0f;
+}
+
+li span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: var(--clear-btn);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+li span:hover {
+  color: var(--clear-hover);
+}
+
+.light-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-group {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.btn-group .drag{
+  position: absolute;
+  top: 2px;
+  right: 180px;
+}
+.btn-group button {
+  background-color: transparent;
+  color: var(--button-bg);
+  border: 1px solid var(--button-bg);
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-group button:hover {
+  background-color: var(--button-bg);
+  color: #0f0f0f;
+}
+
+.btn-group button:disabled {
+  cursor: not-allowed;
+}
+
+.updown {
+  display: flex;
+  position: absolute;
+  right: 100px;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .formcontainer {
+    flex-direction: column;
+  }
+
+  input[type="text"],
+  button,
+  .ant-picker {
+    width: 100%;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  li button.edit-btn,
+  li span {
+    margin-top: 10px;
+  }
+}
